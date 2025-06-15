@@ -1,0 +1,32 @@
+@use "../../../utils/mixin" as *;
+
+.cart-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5625rem;
+    padding-top: 1.5625rem;
+
+    @include min-sm {
+        padding-top: 3.75rem;
+    }
+    @include min-md {
+        padding-top: 9.375rem;
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.625rem;
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 1.875rem;
+    }
+    &__subtitle {
+        font-weight: 500;
+        font-size: 1.25rem;
+    }
+}

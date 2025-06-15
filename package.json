@@ -1,0 +1,18 @@
+{
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "sass": "^1.89.1",
+        "vite": "^6.0",
+        "vite-plugin-full-reload": "^1.2.0",
+        "vite-plugin-symfony": "^8.1"
+    },
+    "dependencies": {
+        "overlayscrollbars": "^2.11.4",
+        "swiper": "^11.2.8"
+    }
+}

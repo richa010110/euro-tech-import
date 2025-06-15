@@ -1,0 +1,44 @@
+{% extends 'layouts/SidebarLayout/index.twig' %}
+
+{% block title %}Страница каталога
+{% endblock %}
+
+{% block body %}
+	<div class="catalog">
+		<h1 class="catalog__title">Запчасти для MAN</h1>
+		<div class="catalog__products">
+			{% include "components/product-card.twig" with { type: 'large' } %}
+			{% include "components/product-card.twig" with { type: 'large' } %}
+			{% include "components/product-card.twig" with { type: 'large' } %}
+			{% include "components/product-card.twig" with { type: 'large' } %}
+			{% include "components/product-card.twig" with { type: 'large' } %}
+		</div>
+		{% set pagination = {
+			current: 5,
+			total: 250,
+			links: [
+				{
+					number: 1,
+					href: '#'
+				},
+				{
+					number: 2,
+					href: '#'
+				},
+				{
+					number: 3,
+					href: '#'
+				},
+				{
+					number: 4,
+					href: '#'
+				},
+				{
+					number: 250,
+					href: '#'
+				},
+			]
+		} %}
+	</div>
+	{{ include("components/pagination.twig", pagination) }}
+{% endblock %}

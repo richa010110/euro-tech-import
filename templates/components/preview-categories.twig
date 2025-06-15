@@ -1,0 +1,81 @@
+<section class="heading-section">
+	<h2 class="heading-section__title">Запчасти для различных видов спецтехники</h2>
+	<div class="preview-categories">
+		{% set categories = [
+			{
+				'title': 'Запчасти для ТО',
+				'img': '/images/preview-categories/1.png',
+				'list': [
+					'Масло и смазки в бочках',
+					'Фильтра'
+				]
+			},
+			{
+				'title': 'Двигатель',
+				'img': '/images/preview-categories/2.png',
+				'list': [
+					'Контрактные двигателя',
+					'Поршня',
+					'Прокладки',
+					'Шестерни'
+				]
+			},
+			{
+				'title': 'КПП',
+				'img': '/images/preview-categories/3.png',
+				'list': [
+					'Контрактные КПП',
+					'Прокладки',
+					'Шестерни',
+					'Комплекты сцепления'
+				]
+			},
+			{
+				'title': 'Электроника',
+				'img': '/images/preview-categories/4.png',
+				'list': [
+					'Датчики',
+					'Блоки управления'
+				]
+			},
+			{
+				'title': 'Ходовая часть',
+				'img': '/images/preview-categories/5.png',
+				'list': [
+					'Сайлентблоки',
+					'Рычаги',
+					'Пневмоподушки',
+					'Тяги',
+					'Шины'
+				]
+			},
+			{
+				'title': 'Гидравлика',
+				'img': '/images/preview-categories/6.png',
+				'list': [
+					'Компрессора',
+					'Баки',
+					'Магистрали'
+				]
+			},
+		] %}
+		{% for category in categories %}
+			<div class="preview-category">
+				<img class="preview-category__img" src="{{ category.img }}" alt="{{ category.title }}">
+				<div class="preview-category__title">{{ category.title }}</div>
+				<ul class="preview-category__list">
+					{% for list_item in category.list %}
+						<li class="preview-category__list-item">{{ list_item }}</li>
+					{% endfor %}
+				</ul>
+				<a href="#" class="preview-category__more-link">
+					Показать больше
+					<svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+						<path d="M1 0.5L9 8.5L1 16.5" stroke="currentColor"/>
+						<path d="M8 0.5L16 8.5L8 16.5" stroke="currentColor"/>
+					</svg>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+</section>

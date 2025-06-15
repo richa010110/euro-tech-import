@@ -1,0 +1,122 @@
+@use "../../../utils/mixin" as *;
+
+.product-gallery {
+    display: grid;
+    gap: 0.625rem;
+
+    &__main,
+    &__thumb {
+        width: 100%;
+    }
+
+    &__main {
+        & .swiper-nav {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        & .swiper-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.625rem;
+            height: 2.625rem;
+            background-color: #000000;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: opacity 0.1s ease-in-out;
+            pointer-events: all;
+
+            @include min-md {
+                width: 3.875rem;
+                height: 3.875rem;
+            }
+
+            &-disabled {
+                pointer-events: none;
+                opacity: 0.3;
+            }
+        }
+
+        & .swiper-slide {
+            overflow: hidden;
+            padding-bottom: 70%;
+
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__thumb {
+        & .swiper-nav {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                width: 5.3125rem;
+                height: 100%;
+            }
+        }
+        & .swiper-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: #dfdfdf;
+            border-radius: 50%;
+            color: #000000;
+            transition: opacity 0.1s ease-in-out;
+            pointer-events: all;
+
+            @include min-md {
+                width: 1.875rem;
+                height: 1.875rem;
+            }
+
+            &-disabled {
+                pointer-events: none;
+                opacity: 0.3;
+            }
+        }
+
+        & .swiper-slide {
+            overflow: hidden;
+            padding-bottom: 15%;
+
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

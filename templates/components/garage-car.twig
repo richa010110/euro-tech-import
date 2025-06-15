@@ -1,0 +1,22 @@
+<div class="garage-car">
+	{% if isActive %}
+		<div class="garage-car__is-active">
+			<img src="/icons/check.svg" alt="Активно для фильтрации">
+			Активно для фильтрации
+		</div>
+	{% else %}
+		<button class="btn btn-primary btn-xs">Выбрать для фильтрации</button>
+	{% endif %}
+	<div class="garage-car__body">
+		<div class="garage-car__info">
+			<img class="garage-car__icon" src="/icons/truck.svg" alt="{{ name }}" width="42">
+			<div class="garage-car__text">
+				<h4 class="garage-car__name">{{ name }}</h4>
+				<p class="garage-car__config">{{ config }}</p>
+			</div>
+		</div>
+		<button class="garage-car__delete-btn">
+			<img src="/icons/trash.svg" alt="Удалить" width="14">
+		</button>
+	</div>
+</div>

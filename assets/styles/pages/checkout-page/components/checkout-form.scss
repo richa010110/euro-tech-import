@@ -1,0 +1,38 @@
+@use "../../../utils/mixin" as *;
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @include min-md {
+        gap: 2.5rem;
+    }
+
+    &__fields {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    &__summary {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    &__total {
+        display: flex;
+        align-items: center;
+        gap: 1.6875rem;
+        font-size: 1.0625rem;
+
+        &-summ {
+            font-weight: 500;
+            font-size: 1.4375rem;
+            line-height: 1.4;
+        }
+    }
+    &__note {
+        font-size: 0.9375rem;
+        color: #ee1919;
+    }
+}

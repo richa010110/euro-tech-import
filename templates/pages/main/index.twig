@@ -1,0 +1,13 @@
+{% extends 'layouts/MainLayout/index.twig' %}
+
+{% block title %}Главная
+{% endblock %}
+
+{% block body %}
+	{% include 'components/transport-tabs.twig' %}
+	{% include 'components/BannerSwiper/banner-swiper.twig' %}
+	{% include 'components/availability-info.twig' %}
+	{% include 'components/preview-categories.twig' %}
+	{{ include('components/products-swiper.twig', { title: 'Популярные товары'}) }}
+	{% include 'components/feedback-method.twig' %}
+{% endblock %}

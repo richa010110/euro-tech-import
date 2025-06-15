@@ -1,0 +1,19 @@
+<div class="pagination">
+	{% if pagination.current > 1 %}
+		<a href="#" class="pagination__link pagination__link--prev">
+			<svg width="17" height="8" viewbox="0 0 17 8" fill="none">
+				<path d="M0.146446 3.64645C-0.0488148 3.84171 -0.0488148 4.15829 0.146446 4.35355L3.32843 7.53553C3.52369 7.7308 3.84027 7.7308 4.03553 7.53553C4.2308 7.34027 4.2308 7.02369 4.03553 6.82843L1.20711 4L4.03553 1.17157C4.2308 0.976311 4.2308 0.659728 4.03553 0.464466C3.84027 0.269204 3.52369 0.269204 3.32843 0.464466L0.146446 3.64645ZM16.5 4V3.5L0.5 3.5V4V4.5L16.5 4.5V4Z" fill="currentColor"/>
+			</svg>
+		</a>
+	{% endif %}
+	{% for link in pagination.links %}
+		<a href="{{ link.href }}" class="pagination__link{% if pagination.current == link.number %} pagination__link--current{% endif %}">{{ link.number }}</a>
+	{% endfor %}
+	{% if pagination.current != pagination.total %}
+		<a href="#" class="pagination__link pagination__link--next">
+			<svg width="17" height="8" viewbox="0 0 17 8" fill="none">
+				<path d="M16.8536 3.64645C17.0488 3.84171 17.0488 4.15829 16.8536 4.35355L13.6716 7.53553C13.4763 7.7308 13.1597 7.7308 12.9645 7.53553C12.7692 7.34027 12.7692 7.02369 12.9645 6.82843L15.7929 4L12.9645 1.17157C12.7692 0.976311 12.7692 0.659728 12.9645 0.464466C13.1597 0.269204 13.4763 0.269204 13.6716 0.464466L16.8536 3.64645ZM0.5 4L0.5 3.5L16.5 3.5V4V4.5L0.5 4.5L0.5 4Z" fill="currentColor"/>
+			</svg>
+		</a>
+	{% endif %}
+</div>

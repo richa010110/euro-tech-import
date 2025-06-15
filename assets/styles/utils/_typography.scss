@@ -1,0 +1,11 @@
+.font {
+    &-bold {
+        font-weight: 700;
+    }
+    &-semibold {
+        font-weight: 600;
+    }
+    &-medium {
+        font-weight: 500;
+    }
+}

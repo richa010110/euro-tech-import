@@ -1,0 +1,136 @@
+{% extends 'layouts/SidebarLayout/index.twig' %}
+
+{% block title %}Корзина
+{% endblock %}
+
+{% block body %}
+	<div class="cart-empty">
+		<div class="cart-empty__head">
+			<h1 class="cart-empty__title">Ваша корзина пуста</h1>
+			<p class="cart-empty__subtitle">Добавьте товар из каталога, и вы сможете оформить заказ!</p>
+		</div>
+		<a href="#" class="btn btn-primary btn-md">Перейти в каталог</a>
+	</div>
+	<div class="checkout-page">
+		<div class="checkout-page__section">
+			<div class="checkout-page__section-header">
+				<h2 class="checkout-page__title">
+					Ваша корзина
+					<span class="checkout-page__count">3 товара</span>
+				</h2>
+				<button class="checkout-page__clear">Очистить корзину</button>
+			</div>
+			<div class="cart-list">
+				<div class="cart-list__column">
+					{% include "components/cart-product.twig" %}
+					{% include "components/cart-product.twig" %}
+					{% include "components/cart-product.twig" %}
+					{% include "components/cart-product.twig" %}
+					{% include "components/cart-product.twig" %}
+					{% include "components/cart-product.twig" %}
+				</div>
+			</div>
+		</div>
+		<div class="checkout-page__section">
+			<div class="checkout-page__section-header">
+				<h2 class="checkout-page__title">Заполните данные</h2>
+				<p class="checkout-page__description">Для доставки и оплаты товара</p>
+			</div>
+			<form class="checkout-form">
+				<div class="checkout-form__fields">
+					{% include "UI/input.twig" with {
+						name: 'full-name',
+						placeholder: 'Фамилия Имя Отчество'
+					} %}
+					{% include "UI/input.twig" with {
+						type: 'email',
+						name: 'email',
+						placeholder: 'Ваша электронная почта'
+					} %}
+					{% include "UI/input.twig" with {
+						type: 'tel',
+						name: 'tel',
+						placeholder: '+7 (___) ___-__-__'
+					} %}
+					{% include "UI/input.twig" with {
+						isTextarea: true,
+						name: 'comment',
+						placeholder: 'Комментарий'
+					} %}
+					{% include "UI/select.twig" with {
+						variant: 'secondary',
+						name: 'delivery',
+						options: [
+							{
+								value: 'sdec',
+								label: 'СДЭК',
+							},
+							{
+								value: 'PDP',
+								label: 'PDP',
+							},
+						]
+					} %}
+					{% include "UI/input.twig" with {
+						name: 'address',
+						placeholder: 'Адрес доставки'
+					} %}
+				</div>
+				<div class="order-type">
+					<input id="order-company" type="radio" name="orderType" value="company" hidden checked>
+					<input id="order-individual" type="radio" name="orderType" hidden value="individual">
+					<p class="order-type__label">Сделать заказ как:</p>
+					<div class="order-type__options">
+						<label class="order-type__option" for="order-company">Юр. лицо</label>
+						<label class="order-type__option" for="order-individual">Физическое лицо</label>
+					</div>
+					<div class="order-type__block" data-type="company">
+						<div class="checkout-form__fields">
+							{% include "UI/input.twig" with {
+								name: 'INN',
+								placeholder: 'ИНН плательщика (Обязательное поле)'
+							} %}
+							{% include "UI/input.twig" with {
+								type: 'file',
+								name: 'requisites-file',
+								placeholder: 'Прикрепить файл с реквизитами'
+							} %}
+							{% include "UI/input.twig" with {
+								isTextarea: true,
+								name: 'requisites-text',
+								placeholder: 'Или введите реквизиты'
+							} %}
+						</div>
+					</div>
+					<div class="order-type__block" data-type="individual">
+						{% include "UI/select.twig" with {
+							variant: 'secondary',
+							name: 'payment-requisites',
+							options: [
+								{
+									value: 'payment-requisites',
+									label: 'Оплата по реквизитам',
+								}
+							]
+						} %}
+					</div>
+				</div>
+				<div class="checkout-form__summary">
+					<p class="checkout-form__total">
+						Сумма заказа:
+						<span class="checkout-form__total-summ">3 000 ₽</span>
+					</p>
+					{% include "UI/input.twig" with {
+							type: 'checkbox',
+							name: 'consent',
+							placeholder: 'Даю согласие на обработку персональных данных'
+						} %}
+					<button class="btn btn-primary btn-lg">Оформить заказ</button>
+					<p class="checkout-form__note">
+						Обработка заказов осуществляется от 5 000 рублей
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

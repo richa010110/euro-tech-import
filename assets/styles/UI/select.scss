@@ -1,0 +1,45 @@
+.select {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+
+    &-primary {
+        background-color: #ffffff;
+        border: 1px solid #d2d8de;
+        border-radius: 0.25rem;
+
+        & select {
+            padding: 0.875rem 2.5rem 0.875rem 0.875rem;
+            font-size: 0.75rem;
+        }
+        & svg {
+            top: calc(50% - 0.25rem);
+            right: 0.875rem;
+        }
+    }
+    &-secondary {
+        background-color: #f9f9f9;
+        border-radius: 0.3125rem;
+
+        & select {
+            padding: 1rem 1.875rem;
+            font-size: 0.9375rem;
+        }
+        & svg {
+            top: calc(50% - 0.3125rem);
+            right: 1.875rem;
+        }
+    }
+
+    & select {
+        width: 100%;
+        appearance: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    & svg {
+        position: absolute;
+    }
+}

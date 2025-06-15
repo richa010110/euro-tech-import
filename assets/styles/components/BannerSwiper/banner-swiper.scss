@@ -1,0 +1,29 @@
+@use "./slides/slide-catalog-oil";
+
+.banner-swiper {
+    border-radius: 0.25rem;
+    margin-bottom: 4.375rem;
+
+    &-buttons {
+        position: absolute;
+        z-index: 1;
+        left: 2.5rem;
+        bottom: 2.1875rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .swiper-slide {
+        overflow: hidden;
+        border-radius: 0.25rem;
+    }
+    .swiper-button {
+        color: #ffffff;
+        transition: opacity 0.1s ease-in-out;
+
+        &-disabled {
+            pointer-events: none;
+            opacity: 0.3;
+        }
+    }
+}

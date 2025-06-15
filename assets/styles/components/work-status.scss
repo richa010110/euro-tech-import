@@ -1,0 +1,28 @@
+.work-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 1.875rem;
+    padding: 0.375rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+
+    &--open {
+        &::before {
+            background-color: #00ff38;
+        }
+    }
+    &--close {
+        &::before {
+            background-color: #f20202;
+        }
+    }
+
+    &::before {
+        content: "";
+        width: 0.875rem;
+        height: 0.875rem;
+        border-radius: 50%;
+    }
+}

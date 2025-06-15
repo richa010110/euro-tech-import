@@ -1,0 +1,110 @@
+@use "../utils/mixin" as *;
+
+.availability-info {
+    gap: 1.25rem;
+    margin-bottom: 4.375rem;
+
+    @include min-md {
+        display: grid;
+        grid-template: auto / repeat(2, 1fr);
+    }
+    @include max-md {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        overflow: hidden;
+        position: relative;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 1.25rem;
+
+        &--tools,
+        &--engine {
+            padding-top: 11.375rem;
+
+            .availability-info {
+                &__content {
+                    gap: 0.875rem;
+                    max-width: 28.75rem;
+                }
+                &__title {
+                    font-size: 2.125rem;
+                }
+            }
+        }
+        &--tools {
+            background-image: url("/public/images/availability-info/bg-1.png");
+        }
+        &--engine {
+            background-image: url("/public/images/availability-info/bg-2.png");
+        }
+
+        &--mechanic {
+            grid-column: span 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("/public/images/availability-info/bg-3.png");
+
+            @include min-md {
+                padding-bottom: 0;
+            }
+            @include min-lg {
+                gap: 1.375rem;
+            }
+
+            .availability-info {
+                &__content {
+                    gap: 1.25rem;
+                    max-width: 35rem;
+                }
+                &__title {
+                    font-size: 2.75rem;
+                }
+            }
+        }
+    }
+
+    &__image {
+        &--tools,
+        &--engine {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        &--tools {
+            @include max-lg {
+                width: 11.875rem;
+            }
+        }
+        &--engine {
+            @include max-lg {
+                width: 11.25rem;
+            }
+        }
+
+        &--mechanic {
+            width: 384px;
+
+            @include max-md {
+                display: none;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        color: #ffffff;
+    }
+    &__title {
+        font-weight: 700;
+    }
+    &__text {
+        font-weight: 500;
+        line-height: 1.4;
+    }
+}

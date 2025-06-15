@@ -1,0 +1,20 @@
+{% set variant = variant|default('') %}
+
+{% set containerClass = 'select' ~ (variant == 'secondary' ? ' select-secondary' : ' select-primary') %}
+
+<div class="{{ containerClass }}">
+	<select name="{{ name }}">
+		{% for option in options %}
+			<option value="{{ option.value }}">{{ option.label }}</option>
+		{% endfor %}
+	</select>
+	{% if variant == 'secondary' %}
+		<svg width="17" height="10" viewbox="0 0 17 10" fill="none">
+			<path d="M1 1C1.8 1.8 6.33333 6.33333 8.5 8.5L16 1" stroke="black"/>
+		</svg>
+	{% else %}
+		<svg width="13" height="6" viewbox="0 0 13 6" fill="none">
+			<path d="M1 1L6.5 5L12 1" stroke="black" stroke-opacity="0.38"/>
+		</svg>
+	{% endif %}
+</div>

@@ -1,0 +1,54 @@
+@use "../utils/mixin" as *;
+
+.search-input {
+    display: flex;
+    width: 100%;
+
+    &__input {
+        width: 100%;
+        border: 1px solid #bfbfbf;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        padding: 0.625rem;
+        font-size: 0.75rem;
+
+        @include min-sm {
+            padding: 1.25rem;
+            font-size: 0.875rem;
+        }
+        @include min-lg {
+            padding: 1.625rem;
+            font-size: 1rem;
+        }
+    }
+    &__btn {
+        gap: 0.875rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 0 1.75rem;
+        font-weight: 700;
+        font-size: 0.75rem;
+
+        @include min-sm {
+            padding: 0 2.5rem;
+            font-size: 1rem;
+        }
+        @include min-lg {
+            min-height: 4.375rem;
+            padding: 0 4.375rem;
+            font-size: 1.125rem;
+        }
+
+        &-icon {
+            flex: 0 0;
+            width: 1rem;
+
+            @include min-sm {
+                width: 1.125rem;
+            }
+            @include min-lg {
+                width: 1.25rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@use "../../../utils/mixin" as *;
+
+.product-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem;
+
+    @include min-lg {
+        gap: 1.875rem;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.25rem;
+        line-height: 1.3;
+    }
+    &__text {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+}

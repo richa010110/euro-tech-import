@@ -1,0 +1,37 @@
+{% extends 'layouts/SidebarLayout/index.twig' %}
+
+{% block title %}Индивидуальный заказ
+{% endblock %}
+
+{% block body %}
+	<div class="order-req-page">
+		<div class="order-req">
+			<img src="images/shit.png" class="order-req__media">
+			<div class="order-req__content">
+				<div class="order-req__heading">
+					<h1 class="order-req__title">Не нашли нужную запчасть?</h1>
+					<p class="order-req__subtitle">Некоторых позиций может в наличии на данный момент, но вы можете оставить заявку и мы сделаем заказ запчастей индивидуальный для Вас</p>
+				</div>
+				<form class="order-req__form">
+					{% include "UI/input.twig" with {
+                        variant: 'secondary',
+						name: 'full-name',
+						placeholder: 'Фамилия Имя Отчество'
+					} %}
+					{% include "UI/input.twig" with {
+                        variant: 'secondary',
+						type: 'tel',
+						name: 'tel',
+						placeholder: '+7 (___) ___-__-__'
+					} %}
+					{% include "UI/input.twig" with {
+                        variant: 'secondary',
+						name: 'catalog-number',
+						placeholder: 'Каталожный номер либо название запчасти'
+					} %}
+					<button class="btn btn-primary btn-3lg">Оставить заявку на заказ</button>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,217 @@
+@use "../utils/mixin" as *;
+
+.header {
+    flex-direction: column;
+    gap: 1.875rem;
+    padding: 1.875rem 0;
+
+    @include max-sm {
+        display: none;
+    }
+    @include min-sm {
+        display: flex;
+    }
+
+    &__top {
+        gap: 1rem;
+
+        @include min-lg {
+            display: flex;
+        }
+        @include max-lg {
+            display: grid;
+            grid-template: auto / repeat(2, 1fr);
+        }
+
+        &-item {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+
+            @include min-lg {
+                &:not(:last-child) {
+                    border-right: 1px solid rgba(#000000, 0.1);
+                    padding-right: 1rem;
+                }
+            }
+
+            &--contact {
+                justify-content: center;
+
+                @include max-lg {
+                    border-left: 1px solid rgba(#000000, 0.1);
+                    padding-left: 1rem;
+                }
+            }
+            &--info {
+                gap: 1.25rem;
+
+                @include min-lg {
+                    justify-content: flex-end;
+                }
+                @include max-lg {
+                    justify-content: center;
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+
+    &__contact {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.875rem;
+
+        .header__phone {
+            display: flex;
+            gap: 0.875rem;
+            font-weight: 600;
+
+            &-icon {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+
+        .header__region {
+            color: #444;
+        }
+    }
+
+    &__work-time {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+        line-height: 1.4;
+
+        .header__timer {
+            font-weight: 500;
+            font-size: 0.75rem;
+            color: rgba(#000000, 0.53);
+
+            strong {
+                color: #000000;
+            }
+        }
+
+        .header__schedule {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+    }
+
+    &__action {
+        display: flex;
+        align-self: stretch;
+    }
+
+    &__bottom {
+        gap: 1rem;
+        background-color: #f9f9f9;
+        padding: 0.625rem 1.25rem;
+
+        @include min-lg {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include max-lg {
+            display: grid;
+            grid-template: auto / repeat(2, 1fr);
+        }
+    }
+
+    &__nav {
+        grid-column: span 2;
+    }
+}
+
+.nav {
+    display: flex;
+    gap: 0.625rem 1.25rem;
+
+    &__link {
+        padding: 0.625rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #373737;
+
+        &:hover {
+            background-color: #eeeeee;
+            color: #373737;
+        }
+    }
+}
+
+.header-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.625rem 0 1rem 0;
+
+    @include min-sm {
+        display: none;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__middle {
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid rgba(#000000, 0.14);
+        border-bottom: 1px solid rgba(#000000, 0.14);
+        padding: 0.75rem 0;
+    }
+
+    &__schedule {
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+
+        .header-mobile__phone {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-weight: 600;
+
+            &-icon {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+    }
+    &__bottom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.625rem;
+        background-color: #f9f9f9;
+        border-radius: 0.25rem;
+        padding: 0.625rem;
+    }
+    &__catalog-btn {
+        flex: 1 1 50%;
+    }
+    &__actions {
+        flex: 1 1 auto;
+        display: flex;
+        gap: 0.625rem;
+    }
+    &__action {
+        &-btn {
+            flex: 1 1 auto;
+            min-width: 1.875rem;
+            min-height: 3.125rem;
+            padding: 0 0.5rem;
+        }
+    }
+}

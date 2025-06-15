@@ -1,0 +1,66 @@
+@use "../../../utils/mixin" as *;
+
+.slide-catalog-oil {
+    display: flex;
+    align-items: center;
+    background-color: #1c3d5a;
+    padding: 0 2rem;
+
+    @include min-lg {
+        padding: 0 4.5rem 0 2.5rem;
+    }
+    @include max-lg {
+        flex-direction: column;
+    }
+
+    &__content {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 2rem 0;
+
+        @include min-sm {
+            gap: 1.25rem;
+        }
+        @include min-lg {
+            gap: 1.875rem;
+            padding: 5rem 0;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        color: #ffffff;
+
+        @include min-sm {
+            gap: 1rem;
+        }
+        @include min-md {
+            gap: 1.25rem;
+            max-width: 33rem;
+        }
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 1.125rem;
+
+        @include min-sm {
+            font-size: 2rem;
+        }
+        @include min-md {
+            font-size: 2.75rem;
+        }
+    }
+    &__subtitle {
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+    &__media {
+        align-self: flex-end;
+        padding-top: 1rem;
+    }
+}

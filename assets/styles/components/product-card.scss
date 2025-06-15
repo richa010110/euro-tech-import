@@ -1,0 +1,208 @@
+@use "../utils/mixin" as *;
+
+.product-card {
+    position: relative;
+    display: flex;
+
+    &--small {
+        display: flex;
+        flex-direction: column;
+        gap: 1.625rem;
+
+        & .product-card {
+            &__availability {
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                left: 0;
+                padding: 0.625rem 0.875rem;
+                font-size: 0.875rem;
+            }
+
+            &__swiper {
+                width: 100%;
+
+                .swiper-slide {
+                    padding-bottom: 63.092%;
+                }
+            }
+
+            &__info {
+                gap: 0.75rem;
+            }
+            &__meta {
+                flex-direction: column;
+            }
+
+            &__price {
+                font-weight: 500;
+                font-size: 1.25rem;
+            }
+        }
+    }
+    &--large {
+        gap: 0.75rem;
+        background-color: #f9f9f9;
+        padding: 0.875rem;
+
+        @include max-sm {
+            display: flex;
+            flex-direction: column;
+        }
+        @include min-md {
+            display: flex;
+        }
+        @include min-sm {
+            @include max-md {
+                display: grid;
+                grid-template: auto / repeat(4, 1fr);
+            }
+        }
+        @include min-lg {
+            gap: 1.25rem;
+        }
+
+        & .product-card {
+            &__swiper {
+                margin: 0;
+
+                @include max-md {
+                    grid-column: span 4;
+                }
+                @include min-md {
+                    flex: 0 0;
+                    flex-basis: 13rem;
+                }
+                @include min-lg {
+                    flex-basis: 15rem;
+                }
+
+                .swiper-slide {
+                    padding-bottom: 58.334%;
+                }
+            }
+
+            &__info {
+                flex: 1 1 auto;
+                justify-content: center;
+                gap: 1rem;
+
+                @include min-sm {
+                    @include max-md {
+                        grid-column: span 3;
+                    }
+                }
+                @include min-md {
+                    border-left: 1px solid #eaeaea;
+                    padding-left: 0.75rem;
+                }
+                @include min-lg {
+                    padding-left: 1.5rem;
+                }
+            }
+            &__meta {
+                gap: 0.875rem;
+            }
+
+            &__actions {
+                display: flex;
+                gap: 0.625rem;
+
+                @include max-sm {
+                    flex-wrap: wrap;
+                    align-items: center;
+                }
+                @include min-sm {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                }
+                @include min-md {
+                    border-left: 1px solid #eaeaea;
+                    padding-left: 0.75rem;
+                }
+                @include min-lg {
+                    padding-left: 1.5rem;
+                }
+            }
+            &__availability {
+                padding: 0.25rem 0.75rem;
+                font-size: 0.75rem;
+            }
+
+            &__price {
+                font-weight: 700;
+                font-size: 1.625rem;
+            }
+        }
+    }
+
+    &__availability {
+        border-radius: 5rem;
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #ffffff;
+
+        &--green {
+            background-color: #37b014;
+        }
+        &--red {
+            background-color: #f20202;
+        }
+    }
+    &__swiper {
+        .swiper-slide {
+            overflow: hidden;
+        }
+        .swiper-pagination {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+
+            &-bullet {
+                width: 0.625rem;
+                height: 0.625rem;
+                border-radius: 50%;
+                background-color: #1c3d5a;
+                opacity: 0.46;
+                cursor: pointer;
+                transition: opacity 0.1s ease-in-out;
+
+                &-active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+    &__meta {
+        display: flex;
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.3;
+    }
+    &__detail {
+        font-size: 0.875rem;
+        line-height: 1.3;
+    }
+}

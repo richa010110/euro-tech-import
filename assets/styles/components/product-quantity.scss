@@ -1,0 +1,22 @@
+.product-quantity {
+    display: flex;
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid #bdbdbd;
+        border-radius: 0.3125rem;
+        color: #000000;
+    }
+    &__input {
+        width: 2.8125rem;
+        border: none;
+        font-weight: 500;
+        font-size: 1.25rem;
+        text-align: center;
+        background-color: transparent;
+    }
+}

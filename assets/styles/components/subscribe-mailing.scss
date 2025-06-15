@@ -1,0 +1,74 @@
+@use "../utils/mixin" as *;
+
+.subscribe-mailing {
+    display: flex;
+    background-color: #1c3d5a;
+    margin-bottom: 3.75rem;
+    padding: 1rem;
+
+    @include min-lg {
+        align-items: center;
+        padding: 0.75rem 1.875rem 0.75rem 1.5625rem;
+    }
+
+    &__media {
+        @include max-lg {
+            display: none;
+        }
+    }
+    &__main {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        @include max-lg {
+            flex: 1 1 auto;
+            flex-direction: column;
+        }
+        @include min-lg {
+            flex: 1 1 auto;
+            justify-content: flex-end;
+            gap: 3.125rem;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+        color: #ffffff;
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 1.75rem;
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 1.125rem;
+    }
+
+    &__form {
+        display: flex;
+        max-width: 38.75rem;
+        width: 100%;
+
+        @include max-md {
+            flex-direction: column;
+        }
+    }
+    &__input {
+        flex: 1 1 auto;
+        background-color: #f4f4f4;
+        width: 100%;
+        border-radius: 0.25rem;
+        border: none;
+        padding: 1.5rem 1.875rem;
+        font-size: 1rem;
+
+        @include min-md {
+            margin-right: -0.25rem;
+        }
+        @include max-md {
+            margin-bottom: -0.25rem;
+        }
+    }
+}

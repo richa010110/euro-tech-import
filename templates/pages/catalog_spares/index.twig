@@ -1,0 +1,54 @@
+{% extends 'layouts/MainLayout/index.twig' %}
+
+{% block title %}Каталог запчастей и аксессуаров
+{% endblock %}
+
+{% block body %}
+	<div class="catalog-spares">
+		<h1 class="catalog-spares__title">Широкий выбор запчастей и аксессуаров для Mersedes Actross</h1>
+		<div class="catalog-spares__categories">
+			{% set categories = [
+        {
+          'title': 'Подвеска',
+          'count': '25',
+          'list': [
+            'Контрактные двигателя',
+            'Поршня',
+            'Прокладки',
+            'Шестерни',
+          ]
+        },
+        {
+          'title': 'Кузов',
+          'count': '25',
+          'list': [
+            'Контрактные двигателя',
+            'Поршня',
+            'Прокладки',
+            'Шестерни',
+          ]
+        },
+      ] %}
+			{% for category in categories %}
+				<div class="catalog-spares-category">
+					<div class="catalog-spares-category__heading">
+						<h2 class="catalog-spares-category__title">{{ category.title }}
+							<span class="_count">({{ category.count }})</span>
+						</h2>
+						<a href="#" class="catalog-spares-category__link">
+							<svg width="17" height="17" viewbox="0 0 17 17" fill="none">
+								<path d="M1 0.5L9 8.5L1 16.5" stroke="currentColor"/>
+								<path d="M8 0.5L16 8.5L8 16.5" stroke="currentColor"/>
+							</svg>
+						</a>
+					</div>
+					<ul class="catalog-spares-category__list">
+						{% for list_item in category.list %}
+							<li class="catalog-spares-category__list-item">{{ list_item }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

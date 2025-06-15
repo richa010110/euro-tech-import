@@ -1,0 +1,78 @@
+@use "./work-time";
+@use "./categories";
+@use "@styles/utils/mixin" as *;
+
+.sidebar-layout {
+    position: relative;
+    margin-bottom: 3.75rem;
+
+    @include min-xl {
+        display: flex;
+        gap: 1.25rem;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+
+        @include min-xl {
+            flex: 1 1 auto;
+        }
+    }
+    &__actions {
+        display: flex;
+        gap: 1rem;
+
+        @include max-md {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+    }
+    &__categories-btn {
+        @include min-xl {
+            display: none;
+        }
+    }
+}
+
+.sidebar {
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+
+    @include max-xl {
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        width: 100%;
+    }
+    @include min-xl {
+        flex: 0 0 20.3125rem;
+    }
+
+    &.active {
+        visibility: visible;
+        background-color: rgba(#000000, 0.5);
+
+        .sidebar__wrapper {
+            transform: translateX(0);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.875rem;
+        max-width: 20.3125rem;
+        width: 100%;
+        background-color: #ffffff;
+
+        @include max-xl {
+            padding: 1.125rem;
+            transform: translate(-20.3125rem);
+            transition: 0.2s ease-in-out;
+        }
+    }
+}

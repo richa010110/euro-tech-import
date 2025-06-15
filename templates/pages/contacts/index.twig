@@ -1,0 +1,57 @@
+{% extends 'layouts/SidebarLayout/index.twig' %}
+
+{% block title %}Контакты
+{% endblock %}
+
+{% block body %}
+	<div class="map-wrapper">
+		<div class="map-wrapper__contacts contacts">
+			<div class="contacts__header">
+				<span class="contacts__title">Контакты</span>
+				<span class="contacts__company">ООО «ЕВРОТЕХИМПОРТ»</span>
+			</div>
+			<div class="contacts__list">
+				<div class="contacts__inline-items">
+					<div class="contacts__item contacts__item--inline">
+						<div class="contacts__item-label">ОГРН:</div>
+						<div>1234700031940</div>
+					</div>
+					<div class="contacts__item contacts__item--inline">
+						<div class="contacts__item-label">ИНН:</div>
+						<div>4704114717</div>
+					</div>
+				</div>
+				<div class="contacts__item">
+					<div class="contacts__item-label">Расчётный счёт:</div>
+					<div>40702810920000055710</div>
+				</div>
+				<div class="contacts__item">
+					<div class="contacts__item-label">Расчётный счёт:</div>
+					<div>188850, РОССИЯ, обл ЛЕНИНГРАДСКАЯ, р-н ВЫБОРГСКИЙ, п ПОБЕДА, ул САДОВАЯ, ДОМ 6</div>
+				</div>
+				<div class="contacts__item">
+					<div class="contacts__item-label">Cклад:</div>
+					<div>Каширский пр-д, 27, Москва, Россия, 115201</div>
+				</div>
+			</div>
+			<div class="contacts__footer">
+				<div class="contacts__links">
+					<a href="tel:+7(495) 165-88-15" class="btn btn-link">
+						<img src="/icons/phone.svg" alt="+7(495) 165-88-15" width="24" height="24">
+						+7(495) 165-88-15
+					</a>
+					<a href="mailto:zakaz@zap-a.ru" class="btn btn-link">
+						<img src="/icons/mail.svg" alt="zakaz@zap-a.ru" width="24" height="24">
+						zakaz@zap-a.ru
+					</a>
+				</div>
+				<p class="contacts__work-time">ПН-ПТ&nbsp;с&nbsp;8:30&nbsp;до&nbsp;18:00, СБ&nbsp;с&nbsp;10:00&nbsp;до&nbsp;15:00;</p>
+			</div>
+		</div>
+		<a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="position:absolute;top:0px;">Москва</a>
+		<a href="https://yandex.ru/maps/213/moscow/house/kashirskiy_proyezd_27/Z04YcAVlS00OQFtvfXp0cH9kYA==/?indoorLevel=1&ll=37.625289%2C55.651374&utm_medium=mapframe&utm_source=maps&z=17" style="position:absolute;top:14px;">Каширский проезд, 27 — Яндекс Карты</a>
+		<div class="map-wrapper__iframe">
+			<iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.625289%2C55.651374&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjY1NTI2MRI_0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINCa0LDRiNC40YDRgdC60LjQuSDQv9GA0L7QtdC30LQsIDI3IgoNS4AWQhUCm15C&z=17" width="100%" height="550" frameborder="1" allowfullscreen="true"></iframe>
+		</div>
+	</div>
+{% endblock %}

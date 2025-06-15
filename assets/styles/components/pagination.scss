@@ -1,0 +1,37 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.625rem;
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 2.8125rem;
+        height: 2.8125rem;
+        border: 1px solid #000000;
+        border-radius: 10rem;
+        text-align: center;
+        font-size: 0.9375rem;
+        line-height: 1.4;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            background-color: rgba(#1c3d5a, 0.15);
+        }
+
+        &--current,
+        &--prev,
+        &--next {
+            background-color: #1c3d5a;
+            color: #ffffff;
+        }
+
+        &--prev,
+        &--next {
+            &:hover {
+                color: #000000;
+            }
+        }
+    }
+}
